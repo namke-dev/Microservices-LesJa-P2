@@ -33,4 +33,8 @@ get to this end-point to test if docker container run fine:
 
 http://localhost:8080/api/platforms
 
-### Next section, we use kubectl to deploy `platformservice` image's container
+### Use kubectl to deploy `platformservice` image's container, file setting and note is at K8S folder
+
+### Use HttpClient Service to send PlatfromReadDto obj to Commands Serivce in case create new Flatform obj
+
+Method defined at SyncDataServices\Http\HttpCommandDataClient.cs
