@@ -24,11 +24,11 @@ namespace PlatformService.SyncDataServices.Http
             var response = await _httpClient.PostAsync($"{_configuration["CommandsService"]}", httpContent);
             if (response.IsSuccessStatusCode)
             {
-                System.Console.WriteLine("--> Sync POST to CommandsService succeeded");
+                Console.WriteLine("--> Sync POST to CommandsService succeeded");
             }
             else
             {
-                System.Console.WriteLine("--> Sync POST to CommandsService failded");
+                Console.WriteLine("--> Sync POST to CommandsService failded");
             }
         }
     }
