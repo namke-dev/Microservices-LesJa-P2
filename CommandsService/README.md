@@ -12,5 +12,5 @@ The endpoint: http://localhost:5266/api/c/platforms
 - run cmd
 
 ```powershell
-
+docker build -t namke/commandservice -f Docker/Dockerfile .
 ```
