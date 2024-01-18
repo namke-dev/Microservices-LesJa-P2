@@ -31,6 +31,6 @@ docker push namke/platformservice
 
 get to this end-point to test if docker container run fine:
 
-http://localhost:8080/api/platform
+http://localhost:8080/api/platforms
 
 ### Next section, we use kubectl to deploy `platformservice` image's container
