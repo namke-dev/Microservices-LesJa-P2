@@ -18,4 +18,4 @@ platformnpservice-srv   NodePort    10.103.218.33   <none>        80:32558/TCP  
 ```
 
 access the node port service following url:
-http://localhost:32558/api/platform
+http://localhost:32558/api/platforms
