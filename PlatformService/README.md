@@ -2,6 +2,9 @@
 
 ### Build Platform docker image
 
+1. Create Dockerfile at Docker/Dockerfile
+2. Run command line
+
 ```powershell
 docker build -t namke/platformservice -f Docker/Dockerfile .
 ```
