@@ -1,0 +1,30 @@
+# Specifies the version of the Kubernetes API that this manifest is targeting.
+apiVersion: apps/v1
+# Specifies the type of Kubernetes resource being defined (Deployment).
+kind: Deployment
+# Contains metadata about the Deployment, including its name.
+metadata:
+  name: platforms-deploy
+
+# Defines the desired state for the Deployment.
+spec:
+  # Specifies the desired number of replicas (instances) of the application to run.
+  replicas: 1
+  # Defines how the Deployment identifies which Pods to manage.
+  selector:
+    matchLabels:
+      # Matches Pods with the label "app: platformservice".
+      app: platformservice
+  # Specifies the template for creating new Pods managed by the Deployment.
+  template:
+    metadata:
+      # Defines metadata for the Pods created from this template, including labels.
+      labels:
+        # Sets the label "app: platformservice" for Pods created from this template.
+        app: platformservice
+    spec:
+      # Describes the specification of the Pods created from this template.
+      containers:
+        - name: platformservice
+          # Specifies the Docker image to use for the container.
+          image: namke/platformservice:latest
