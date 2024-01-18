@@ -21,7 +21,7 @@ namespace PlatformService.SyncDataServices.Http
                 Encoding.UTF8,
                 "application/json");
 
-            var response = await _httpClient.PostAsync("http://localhost:5266/api/c/platforms", httpContent);
+            var response = await _httpClient.PostAsync($"{_configuration["CommandsService"]}", httpContent);
             if (response.IsSuccessStatusCode)
             {
                 System.Console.WriteLine("--> Sync POST to CommandsService succeeded");
