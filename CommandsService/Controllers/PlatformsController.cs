@@ -10,7 +10,7 @@ namespace CommandsService.Controllers
         {
 
         }
-        [HttpGet]
+        [HttpPost]
         public ActionResult TestInboundConnection()
         {
             //access url: http://localhost:5266/api/c/platforms to test endpoint
