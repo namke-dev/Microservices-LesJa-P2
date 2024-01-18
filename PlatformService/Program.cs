@@ -20,6 +20,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Access the Configuration object
+var configuration = app.Services.GetRequiredService<IConfiguration>();
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -35,5 +39,7 @@ app.MapControllers();
 
 // Add data for testing
 PreparationDb.PreparationPopulation(app);
+
+Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
 
 app.Run();
