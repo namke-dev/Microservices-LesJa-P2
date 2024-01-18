@@ -1,7 +1,7 @@
 ## Commands Service Note
 
-Test inbound controller endpoint
+### Defined protocol to communicate with PlatformsService
 
-```powershell
-http://localhost:5266/api/c/platforms
-```
+Create an endpoint to test if PlatformsService request hit the CommandsService, then write to console
+
+The endpoint: http://localhost:5266/api/c/platforms
