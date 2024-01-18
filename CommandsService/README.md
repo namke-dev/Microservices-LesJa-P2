@@ -14,3 +14,9 @@ The endpoint: http://localhost:5266/api/c/platforms
 ```powershell
 docker build -t namke/commandservice -f Docker/Dockerfile .
 ```
+
+### Push docker image to Docker Hub
+
+```powershell
+docker push namke/commandservice
+```
