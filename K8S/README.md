@@ -35,3 +35,9 @@ http://localhost:32558/api/platforms
 kubectl delete deployment platforms-deploy
 kubectl delete service platformnpservice-srv
 ```
+
+### restart deployment to apply change:
+
+```powershell
+kubectl.exe rollout restart deployment platforms-deploy
+```
