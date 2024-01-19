@@ -4,7 +4,7 @@
 
 Create an endpoint to test if PlatformsService request hit the CommandsService, then write to console
 
-The endpoint: http://localhost:5266/api/c/platforms
+The endpoint HttpPost: http://localhost:5266/api/c/platforms
 
 ### build and deploy Commands Service
 
@@ -13,6 +13,12 @@ The endpoint: http://localhost:5266/api/c/platforms
 
 ```powershell
 docker build -t namke/commandservice -f Docker/Dockerfile .
+```
+
+### Run in local docker container for testing
+
+```powershell
+docker run -p 8080:80 -d namke/commandservice
 ```
 
 ### Push docker image to Docker Hub
