@@ -28,3 +28,17 @@ spec:
         - name: platformservice
           # Specifies the Docker image to use for the container.
           image: namke/platformservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: platforms-clusterip-srv
+spec: 
+  type: ClusterIP
+  selecter:
+    app: platformservice
+  ports:
+    -name: platformservice
+      protocol: TCP
+      port: 80
+      targetPort: 80
