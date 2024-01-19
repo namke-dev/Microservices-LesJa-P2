@@ -25,12 +25,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: commands-clusterip-srv
-spec: 
+spec:
   type: ClusterIP
-  selecter:
+  selector:
     app: commandservice
   ports:
-    -name: commandservice
+    - name: commandservice
       protocol: TCP
       port: 80
       targetPort: 80
