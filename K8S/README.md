@@ -2,7 +2,7 @@
 
 This folder contain created kubectl deploy and service file
 
-### Run kubectl node, include deploy and node port service
+### Deploy service (included node port service)
 
 ```powershell
 kubectl apply -f platforms-deploy.yaml
@@ -70,4 +70,8 @@ kubectl.exe apply -f .\local-persistent-volume-storage.yaml
 kubectl create secret generic mssql --from-literal=SA_PASSWORD="123456"
 ```
 
-### Create MSSQL for platform service
+### Deployment MSSQL for platform service
+
+```powershell
+kubectl.exe apply -f .\mssql-platform-deploy.yaml
+```
