@@ -67,7 +67,7 @@ kubectl.exe apply -f .\local-persistent-volume-storage.yaml
 ### Create serect password for mssql in kubectl
 
 ```powershell
-kubectl create secret generic mssql --from-literal=SA_PASSWORD="123456"
+kubectl create secret generic mssql --from-literal=SA_PASSWORD="Abc@123456"
 ```
 
 ### Deployment MSSQL for platform service
@@ -75,3 +75,7 @@ kubectl create secret generic mssql --from-literal=SA_PASSWORD="123456"
 ```powershell
 kubectl.exe apply -f .\mssql-platform-deploy.yaml
 ```
+
+test connection: localhost,1433
+account: sa
+password: Abc@123456
