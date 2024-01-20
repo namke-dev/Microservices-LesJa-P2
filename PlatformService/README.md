@@ -43,3 +43,9 @@ http://localhost:8080/api/platforms
 ### Use HttpClient Service to send request (PlatfromReadDto obj) to Commands Serivce in case create new platform object
 
 Method defined at SyncDataServices\Http\HttpCommandDataClient.cs
+
+### add initial migration
+
+```powershell
+dotnet ef migrations add initialmigration
+```
