@@ -21,6 +21,7 @@ builder.Services.AddSwaggerGen();
 // Access the Configuration object
 var configuration = builder.Configuration;
 
+Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
 
 // Configure the HTTP request pipeline.
 if (builder.Environment.IsDevelopment())
@@ -54,7 +55,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Add data for testing
-PreparationDb.PreparationPopulation(app);
-Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
+PreparationDb.PreparationPopulation(app, app.Environment.IsProduction());
 
 app.Run();
