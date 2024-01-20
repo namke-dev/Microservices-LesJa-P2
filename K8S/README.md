@@ -1,6 +1,6 @@
 ## K8S Note
 
-### Create kubectl deploy and service file
+This folder contain created kubectl deploy and service file
 
 ### Run kubectl node, include deploy and node port service
 
@@ -48,3 +48,11 @@ kubectl.exe rollout restart deployment platforms-deploy
 ```powershell
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/aws/deploy.yaml
 ```
+
+### Config temp url ro test Nginx
+
+I try to add url ip to my local (127.0.0.1) for "acme.com" in
+"C:\Windows\System32\drivers\etc\hosts"
+
+Test APIGateway at this endpoint:
+http://acme.com/api/platforms
