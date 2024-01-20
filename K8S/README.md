@@ -47,6 +47,7 @@ kubectl.exe rollout restart deployment platforms-deploy
 
 ```powershell
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/aws/deploy.yaml
+kubectl apply -f ingress-srv.yaml
 ```
 
 ### Config temp url ro test Nginx
@@ -56,3 +57,17 @@ I try to add url ip to my local (127.0.0.1) for "acme.com" in
 
 Test APIGateway at this endpoint:
 http://acme.com/api/platforms
+
+### Create persistent volume claim for storing data
+
+```powershell
+kubectl.exe apply -f .\local-persistent-volume-storage.yaml
+```
+
+### Create serect password for mssql in kubectl
+
+```powershell
+kubectl create secret generic mssql --from-literal=SA_PASSWORD="123456"
+```
+
+### Create MSSQL for platform service
