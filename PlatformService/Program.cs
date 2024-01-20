@@ -20,7 +20,6 @@ builder.Services.AddSwaggerGen();
 
 // Access the Configuration object
 var configuration = builder.Configuration;
-
 Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
 
 // Configure the HTTP request pipeline.
