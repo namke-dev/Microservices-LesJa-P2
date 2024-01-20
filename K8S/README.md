@@ -7,6 +7,7 @@
 ```powershell
 kubectl apply -f platforms-deploy.yaml
 kubectl apply -f platforms-nodeport-service.yaml
+kubectl apply -f commands-deploy.yaml
 ```
 
 ### Check node service port
@@ -40,4 +41,10 @@ kubectl delete service platformnpservice-srv
 
 ```powershell
 kubectl.exe rollout restart deployment platforms-deploy
+```
+
+### Dowload and apply Nginx
+
+```powershell
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/aws/deploy.yaml
 ```
