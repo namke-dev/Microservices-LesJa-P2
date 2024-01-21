@@ -39,7 +39,7 @@ namespace CommandsService.Repositories
             return _context.Platforms.Any(p => p.Id == platformId);
         }
 
-        public IEnumerable<Command> GetCommandsForPlatform(int platformId)
+        public IEnumerable<Command> GetAllCommandsForPlatform(int platformId)
         {
             return _context.Commands
                 .Where(c => c.PlatformId == platformId)
