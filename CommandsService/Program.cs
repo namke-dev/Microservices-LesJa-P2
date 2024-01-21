@@ -8,10 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICommandsRepo, CommandsRepo>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 // Add Db Context service
 if (builder.Environment.IsDevelopment())
 {
@@ -20,6 +16,9 @@ if (builder.Environment.IsDevelopment())
         options.UseInMemoryDatabase("InMem"));
 }
 
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 

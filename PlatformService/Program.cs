@@ -5,22 +5,16 @@ using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Access the Configuration object
+var configuration = builder.Configuration;
+Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
+
 // Add services to the container.
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 
 // Add auto maper service
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-
-
-// Access the Configuration object
-var configuration = builder.Configuration;
-Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
 
 // Add Db Context service
 if (builder.Environment.IsDevelopment())
@@ -37,6 +31,10 @@ else if (builder.Environment.IsProduction())
     options.UseSqlServer(configuration.GetConnectionString("PlatformsConn"))
     );
 }
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
