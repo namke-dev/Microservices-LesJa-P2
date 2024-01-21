@@ -22,6 +22,7 @@ builder.Services.AddSwaggerGen();
 var configuration = builder.Configuration;
 Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
 
+// Add Db Context service
 if (builder.Environment.IsDevelopment())
 {
     Console.WriteLine("--> Using InMem Db");
