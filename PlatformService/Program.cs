@@ -22,7 +22,6 @@ builder.Services.AddSwaggerGen();
 var configuration = builder.Configuration;
 Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService"]}");
 
-// Configure the HTTP request pipeline.
 if (builder.Environment.IsDevelopment())
 {
     Console.WriteLine("--> Using InMem Db");
@@ -40,6 +39,7 @@ else if (builder.Environment.IsProduction())
 
 var app = builder.Build();
 
+
 if (app.Environment.IsDevelopment())
 {
 
@@ -47,8 +47,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Configure the HTTP request pipeline.
 // app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
