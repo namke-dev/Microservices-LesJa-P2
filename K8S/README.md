@@ -40,7 +40,9 @@ kubectl delete service platformnpservice-srv
 ### restart deployment to apply change:
 
 ```powershell
-kubectl.exe rollout restart deployment platforms-deploy
+kubectl rollout restart deployment platforms-deploy
+kubectl rollout restart deployment commands-deploy
+
 ```
 
 ### Dowload and apply Nginx
