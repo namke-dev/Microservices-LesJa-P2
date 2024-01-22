@@ -42,4 +42,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 app.MapControllers();
 
+// Add data for testing
+PreparationDb.PreparePopulation(app);
+
 app.Run();
