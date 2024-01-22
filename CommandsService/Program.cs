@@ -1,3 +1,4 @@
+using CommandsService.AsyncDataServices;
 using CommandsService.Data;
 using CommandsService.EventProcessing;
 using CommandsService.Repositories;
@@ -23,6 +24,8 @@ if (builder.Environment.IsDevelopment())
 }
 
 builder.Services.AddControllers();
+// Add MessageBusSubscriber Service
+builder.Services.AddHostedService<MessageBusSubscriber>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
