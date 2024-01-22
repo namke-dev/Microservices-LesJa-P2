@@ -4,6 +4,6 @@ namespace CommandsService.SynDataServices.Grpc
 {
     public interface IPlatformDataClient
     {
-        IEnumerable<Platform>? ReturnAllPlatform();
+        IEnumerable<Platform>? ReturnAllPlatforms();
     }
 }

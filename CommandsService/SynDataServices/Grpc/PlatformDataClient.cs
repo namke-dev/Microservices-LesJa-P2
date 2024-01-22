@@ -15,7 +15,7 @@ namespace CommandsService.SynDataServices.Grpc
             _configuration = configuration;
             _mapper = mapper;
         }
-        public IEnumerable<Platform>? ReturnAllPlatform()
+        public IEnumerable<Platform>? ReturnAllPlatforms()
         {
             Console.WriteLine($"--> Calling gRPC Service {_configuration["GrpcPlatform"]}");
             var channel = GrpcChannel.ForAddress(_configuration["GrpcPlatform"]!);
