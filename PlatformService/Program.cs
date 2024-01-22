@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PlatformService.AsyncDataServices;
 using PlatformService.Data;
 using PlatformService.Repositories;
 using PlatformService.SyncDataServices.Http;
@@ -12,6 +13,7 @@ Console.WriteLine($"--> Command server endpoint: {configuration["CommandsService
 // Add services to the container.
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
+builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
 
 // Add auto maper service
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
