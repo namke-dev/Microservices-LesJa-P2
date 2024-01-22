@@ -16,12 +16,10 @@ builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add Db Context service
-if (builder.Environment.IsDevelopment())
-{
-    Console.WriteLine("--> Using InMem Db");
-    builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseInMemoryDatabase("InMem"));
-}
+Console.WriteLine("--> Using InMem Db");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseInMemoryDatabase("InMem"));
+
 
 builder.Services.AddControllers();
 // Add MessageBusSubscriber Service
