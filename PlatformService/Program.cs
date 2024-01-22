@@ -60,6 +60,6 @@ app.MapGet("/Protos/platforms.proto", async context =>
 });
 
 // Add data for testing
-PreparationDb.PreparationPopulation(app, app.Environment.IsProduction());
+PreparationDb.PreparePopulation(app, app.Environment.IsProduction());
 
 app.Run();

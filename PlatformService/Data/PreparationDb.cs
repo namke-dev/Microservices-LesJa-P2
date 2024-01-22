@@ -5,7 +5,7 @@ namespace PlatformService.Data
 {
     public static class PreparationDb
     {
-        public static void PreparationPopulation(IApplicationBuilder app, bool isProduction)
+        public static void PreparePopulation(IApplicationBuilder app, bool isProduction)
         {
             using var serviceScope = app.ApplicationServices.CreateScope();
             var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
