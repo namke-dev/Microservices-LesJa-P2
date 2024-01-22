@@ -79,3 +79,9 @@ kubectl.exe apply -f .\mssql-platform-deploy.yaml
 test connection: localhost,1433
 account: sa
 password: Abc@123456
+
+### Deploy RabitMQ service
+
+```powershell
+kubectl apply -f rabbitmq-deploy.yaml
+```
