@@ -70,5 +70,10 @@ namespace CommandsService.Repositories
                 throw new ArgumentException("The Platform does not exist");
             }
         }
+
+        public bool IsExternalPlatformExist(int externalPlatformId)
+        {
+            return _context.Platforms.Any(p => p.ExternalId == externalPlatformId);
+        }
     }
 }
