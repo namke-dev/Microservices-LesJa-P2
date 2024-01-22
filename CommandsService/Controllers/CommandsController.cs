@@ -2,7 +2,6 @@ using AutoMapper;
 using CommandsService.Dtos;
 using CommandsService.Models;
 using CommandsService.Repositories;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CommandsService.Controllers
