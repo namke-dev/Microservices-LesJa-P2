@@ -34,7 +34,7 @@ namespace CommandsService.Repositories
             }
         }
 
-        public bool IsPlatfromExist(int platformId)
+        public bool IsPlatformExist(int platformId)
         {
             return _context.Platforms.Any(p => p.Id == platformId);
         }
@@ -60,7 +60,7 @@ namespace CommandsService.Repositories
             {
                 throw new ArgumentNullException(nameof(command));
             }
-            else if (IsPlatfromExist(platformId))
+            else if (IsPlatformExist(platformId))
             {
                 command.PlatformId = platformId;
                 _context.Commands.Add(command);

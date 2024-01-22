@@ -23,7 +23,7 @@ namespace CommandsService.Controllers
         public ActionResult<IEnumerable<CommandReadDto>> GetAllCommandsForPlatform(int platformId)
         {
             Console.WriteLine("--> Hit GetAllCommandsForPlatform from Commands Service");
-            if (!_repository.IsPlatfromExist(platformId))
+            if (!_repository.IsPlatformExist(platformId))
             {
                 return NotFound();
             }
@@ -36,7 +36,7 @@ namespace CommandsService.Controllers
         public ActionResult<CommandReadDto> GetCommandForPlatform(int platformId, int commandId)
         {
             Console.WriteLine("--> Hit GetCommandForPlatform from Commands Service");
-            if (!_repository.IsPlatfromExist(platformId))
+            if (!_repository.IsPlatformExist(platformId))
             {
                 return NotFound();
             }
@@ -54,7 +54,7 @@ namespace CommandsService.Controllers
         public ActionResult<CommandReadDto> CreateCommandForPlatform(int platformId, CommandCreateDto commandCreateDto)
         {
             Console.WriteLine("--> Hit CreateCommandForPlatform from Commands Service");
-            if (!_repository.IsPlatfromExist(platformId))
+            if (!_repository.IsPlatformExist(platformId))
             {
                 return NotFound();
             }
