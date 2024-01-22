@@ -17,10 +17,15 @@ namespace PlatformService.AsyncDataServices
             var factory = new ConnectionFactory()
             {
                 HostName = _configuration["RabbitMqHost"],
-                Port = int.Parse(_configuration["RabbitMqPort"]!)
+                Port = int.Parse(_configuration["RabbitMqPort"]!),
+                UserName = "guest",
+                Password = "guest"
             };
+
             try
             {
+                // Console.WriteLine($"--> HostName: {_configuration["RabbitMqHost"]}");
+                // Console.WriteLine($"--> Port: {_configuration["RabbitMqPort"]}");
                 _connection = factory.CreateConnection();
                 _channel = _connection.CreateModel();
 
