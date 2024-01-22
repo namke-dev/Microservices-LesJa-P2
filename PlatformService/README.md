@@ -55,3 +55,9 @@ dotnet ef migrations add initialmigration
 ```powershell
 dotnet add package RabbitMQ.Client
 ```
+
+### Test gRPC localy on https
+
+```powershell
+dotnet run --launch-profile https
+```
