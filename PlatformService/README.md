@@ -49,3 +49,9 @@ Method defined at SyncDataServices\Http\HttpCommandDataClient.cs
 ```powershell
 dotnet ef migrations add initialmigration
 ```
+
+### Add package RabitMQ Client
+
+```powershell
+dotnet add package RabbitMQ.Client
+```
