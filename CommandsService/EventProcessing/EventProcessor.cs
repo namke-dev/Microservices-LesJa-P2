@@ -38,7 +38,7 @@ namespace CommandsService.EventProcessing
             switch (eventType?.Event)
             {
                 case "Platform_Published":
-                    Console.WriteLine("Platform published event detected");
+                    Console.WriteLine("--> Platform published event detected");
                     return EventType.Platform_Published;
                 default:
                     Console.WriteLine("--> Could not determin the event type");
