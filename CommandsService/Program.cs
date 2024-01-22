@@ -2,6 +2,7 @@ using CommandsService.AsyncDataServices;
 using CommandsService.Data;
 using CommandsService.EventProcessing;
 using CommandsService.Repositories;
+using CommandsService.SynDataServices.Grpc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddControllers();
 // Add MessageBusSubscriber Service
 builder.Services.AddHostedService<MessageBusSubscriber>();
+// Add gRPC service
+builder.Services.AddScoped<IPlatformDataClient, PlatformDataClient>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
