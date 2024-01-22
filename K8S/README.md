@@ -85,3 +85,9 @@ password: Abc@123456
 ```powershell
 kubectl apply -f rabbitmq-deploy.yaml
 ```
+
+Access to Rabbitmq through browser: http://localhost:15672
+
+User: guest
+
+Passwork: guest
