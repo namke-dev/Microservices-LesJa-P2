@@ -17,9 +17,7 @@ namespace PlatformService.AsyncDataServices
             var factory = new ConnectionFactory()
             {
                 HostName = _configuration["RabbitMqHost"],
-                Port = int.Parse(_configuration["RabbitMqPort"]!),
-                UserName = "guest",
-                Password = "guest"
+                Port = int.Parse(_configuration["RabbitMqPort"]!)
             };
 
             try
